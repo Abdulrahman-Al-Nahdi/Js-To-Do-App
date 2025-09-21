@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- to show icon on tab -->
+    <link href="Images/to-do-app.png" rel="icon" sizes="192x192" />
+    <link href="Images/to-do-app.png" rel="icon" sizes="128x128" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form">
+        <input type="text" placeholder="Enter Your Task" class="task-input" />
+        <button class="submmit">Ok</button>
+      </div>
+      <div class="lists">
+        <div class="fav">
+          <h3>favorites</h3>
+          <ul></ul>
+        </div>
+        <div class="inbox">
+          <h3>inbox</h3>
+          <ul></ul>
+        </div>
+        <div class="done">
+          <h3>done</h3>
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
