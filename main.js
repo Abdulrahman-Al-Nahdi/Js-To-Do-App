@@ -50,19 +50,13 @@ function addTaskToInboxArray(taskText) {
   let task = {
     id: Date.now(),
     title: taskText,
-    completed: false,
   };
   inboxList.push(task);
-  addElementsToInboxList();
-  saveToLocalStorage();
-}
-
-// function to create elements and add it to inbox ul
-function addElementsToInboxList() {
   inboxUl.innerHTML = "";
   inboxList.forEach((ele) => {
     createTask(ele, inboxUl);
   });
+  saveToLocalStorage();
 }
 
 function createTask(task, list) {
@@ -105,7 +99,13 @@ function createTask(task, list) {
   favBtn.addEventListener("click", function () {
     favList.push(task);
     createTask(task, favUl);
-    inboxList = inboxList.filter((t) => t.id !== task.id);
+    if (list === inboxUl) {
+      inboxList = inboxList.filter((t) => t.id !== task.id);
+    } else if (list === favUl) {
+      favList = favList.filter((t) => t.id !== task.id);
+    } else if (list === doneUl) {
+      doneList = doneList.filter((t) => t.id !== task.id);
+    }
     li.remove();
     saveToLocalStorage();
   });
@@ -117,7 +117,13 @@ function createTask(task, list) {
   completeBtn.addEventListener("click", function () {
     doneList.push(task);
     createTask(task, doneUl);
-    inboxList = inboxList.filter((t) => t.id !== task.id);
+    if (list === inboxUl) {
+      inboxList = inboxList.filter((t) => t.id !== task.id);
+    } else if (list === favUl) {
+      favList = favList.filter((t) => t.id !== task.id);
+    } else if (list === doneUl) {
+      doneList = doneList.filter((t) => t.id !== task.id);
+    }
     li.remove();
     saveToLocalStorage();
   });
